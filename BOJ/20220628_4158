@@ -1,0 +1,55 @@
+'''
+제한시간 1초(100,000,000번)
+n,m의 최댓값 : 1,000,000
+CD번호의 최댓값 = 10억 
+1) if i:10억까지의 list CDS => 모두 0으로 초기화 
+2) 상근이꺼 CDS[int(input())]++
+3) 선영이꺼 CDS[int(input())]++ 한 뒤, if CDS[int(input())] == 2 => cnt ++ 
+
+1) O몇일까 ? 걍 범위잡고 다 0 때려넣으면 되니까 O(1)일까? 아니면 O(10억)?
+2) N*O(1) => 최대 1,000,000
+3) M*O(1) => 최대 1,000,000
+1이 O(10억)아니라면 2+3 = 2,000,000
+
+'''
+# 오 위의 방법이 안되는 이유 : 배열을 10억크기만큼 놓을 수가 없대. 메모리 초과 or 런타임 에러
+#그러니까 set을 쓰자(모두 O(1), 순서 관계 없음)
+#빠른 입력
+import sys
+input = sys.stdin.readline
+while True:
+    n,m = map(int,input().split())
+    if n==0 and m==0:
+        break
+
+    s1 = set()
+    for _ in range(n): # O(n)
+        s1.add(int(input())) # O(1)
+    s2 = set()
+    for _ in range(m): # O(m)
+        s2.add(int(input())) # O(1)
+        
+    s3 = s1 & s2
+print(len(s3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
