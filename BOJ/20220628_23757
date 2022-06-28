@@ -1,0 +1,28 @@
+'''
+sort하면 때마다 O(N)
+그래서 priority queue쓸게 
+총 시간복잡도 : 삽입(O(nlogn)) + 정렬(O(mlogn)) 
+= (n+m)logn <= 200000 * log100000 < 1억 
+
+ps) priority queue : min heap
+'''
+
+import heapq as hq
+
+n,m = map(int,input().split())
+gifts = []
+for numgifts in map(int,input().split()):
+    hq.heappush(gifts,-numgifts)
+
+ans = 1
+for kid in map(int,input().split()):
+    gift = -hq.heappop(gifts)
+    if kid > gift:
+        ans = 0
+        break
+    else:
+        hq.heappush(gifts,-(gift-kid))
+
+print(ans)
+
+
