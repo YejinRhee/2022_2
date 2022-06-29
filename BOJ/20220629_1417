@@ -1,0 +1,55 @@
+def balance(h, n_dasom, init_n_dasom):
+    h.sort(reverse=True) 
+    for i in range(len(h)-1):
+        while h[i] >= h[i+1]:   # while 나오는 시점 : h[i] < h[i+1]일 때 or  n_dasom > h_max일 때
+            if h[i]>=n_dasom:
+                h[i]-=1
+                n_dasom+=1
+            else: # h[i] = h_max인데, n_dasom > h[i]일 때
+                print(n_dasom-init_n_dasom)
+                exit()
+        
+        # while 종료 후엔 h가 모두 오름차순이 되어있음 (1씩 증가)
+        # 즉, 모든 i에 대해 h[i] < h[i+1]
+        if i==len(h)-2 or len(h)==2:  # for문 끝까지 갔고, while도 다 돌았다면
+            h_max =  h[len(h)-1] # h_max는 마지막 값 
+            if h_max < n_dasom:
+                print(n_dasom-init_n_dasom)
+                exit()
+            else:
+                while h_max >= h[len(h)-2]: # h_max가 h의 max값일 때. 
+                    if h_max >= n_dasom:
+                        h_max -=1
+                        n_dasom+=1
+                    else:
+                        print(n_dasom-init_n_dasom)
+                        exit()
+                # 만약 while 다 돌고도 n_dasom이 h의 max값보다 크다면 다시 balance시켜야지 
+                # h에서 n_dasom보다 작은 애들 제거해주고싶긴 한데 그 함수 몰겠네 아으 걍 넣어버리자
+                
+                balance(h, n_dasom, init_n_dasom)
+
+n = int(input())
+n_dasom = int(input())
+init_n_dasom = n_dasom
+h = [] # higher than dasom라는 뜻
+for _ in range(n-1):
+    n_votes = int(input())
+    if  n_votes>= n_dasom:
+        h.append(n_votes)
+    
+if len(h)== 0 :
+    print(0)
+    exit()
+elif len(h)== 1:
+    while h[0] >= n_dasom:   
+        h[0]-=1
+        n_dasom+=1
+    print(n_dasom-init_n_dasom)
+    exit()
+    
+balance(h, n_dasom, init_n_dasom)
+
+
+
+
