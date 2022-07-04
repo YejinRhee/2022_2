@@ -30,26 +30,4 @@ while True:
         s2.add(int(input())) # O(1)
         
     s3 = s1 & s2
-print(len(s3))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print(len(s3))

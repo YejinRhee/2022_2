@@ -7,4 +7,4 @@ while(len(circle) != 1):
     if p>=len(circle):
         p %= len(circle) 
     print(circle.pop(p),end=', ')
-print(circle.pop(p),end='>')
+print(circle.pop(),end='>')

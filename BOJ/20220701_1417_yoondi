@@ -1,0 +1,24 @@
+# 1위가 누군지 빠르게 알아내는 것이 관건! => 최대힙(max-heap)인 우선 순위 큐
+# 데이터의 변동이 일어나도 항상 누가 제일 값이 큰 지 빠르게 알아낼 수 있당
+
+import heapq as hq
+
+N = int(input())
+dasom = int(input())
+candi = []  # max heap
+
+for _ in range(N - 1):
+    hq.heappush(candi, -int(input()))
+
+ans = 0
+if N > 1:
+    while -candi[0] >= dasom:
+        dasom += 1
+        ans += 1
+        hq.heappush(candi, hq.heappop(candi) + 1)
+
+print(ans)
+
+
+
+

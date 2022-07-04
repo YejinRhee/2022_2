@@ -1,0 +1,11 @@
+n = int(input())
+adj1 = [[0]*n]*n
+adj2 = [[0]*n for _ in range(n)]
+print("adj1 : ")
+print(adj1)
+print(adj2)
+for row in adj1:
+    print(row)
+print("adj2 : ")
+for row in adj2:
+    print(row)

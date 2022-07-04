@@ -1,0 +1,20 @@
+n,m = map(int,input().split())
+adj = [[0]*n for _ in range(n)]
+visited = [False for _ in range(n)]
+cnt = 0
+for _ in range(m):
+    u,v = map(lambda x:x-1, map(int,input().split()))
+    adj[u][v] = adj[v][u] = 1
+
+def dfs(start):
+    visited[start]=True
+    for i in range(n):
+        if adj[start][i]!=0 and visited[i] == False:
+            dfs(i)
+            
+for i in range(n):
+    if visited[i] == False:
+        cnt+=1
+        dfs(i)       
+    
+print(cnt)

@@ -1,0 +1,41 @@
+n= int(input())
+
+nums = [int(input()) for _ in range(n)]
+ans = []
+stk = []
+nums_i = 0
+my_i = 1
+for _ in range(n):
+    while nums[nums_i] >= my_i:
+        stk.append(my_i)
+        ans.append("+")
+        my_i += 1
+    
+    if stk[-1] > nums[nums_i]:
+        print("NO")
+        exit()
+    
+    if stk[-1] == nums[nums_i]:
+        stk.pop()
+        ans.append("-")
+        nums_i += 1
+
+
+for i in ans:
+    print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

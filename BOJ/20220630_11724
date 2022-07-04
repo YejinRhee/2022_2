@@ -1,0 +1,17 @@
+from sys import setrecursionlimit
+
+
+n,m = map(int,input().split())
+adj = [[0]* n for _ in range(n)]
+
+for _ in range(m):
+    u,v = map(lambda x:x-1, map(int,input().split()))
+
+
+
+recursion error : 재귀 가능 횟수의 제한
+=> setrecursionlimit바꿔주면 됨
+
+input 엄청 많이 받을거니까, 빠른 임력으로 바꾸자
+
+

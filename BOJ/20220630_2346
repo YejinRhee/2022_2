@@ -1,12 +1,16 @@
-n = int(input())
-nums = list(map(int,input().split()))
-p=0
-print(p+1)
-while(nums):
-   c = nums[p]
-   print(p+c+1)
-   del nums[p]
-   p = p+c-1
-   p %= len(nums)
-   
+from collections import deque
 
+n = int(input())
+q = deque(enumerate(map(int, input().split())))
+ans = []
+
+while q:
+    idx, paper = q.popleft()
+    ans.append(idx + 1)
+
+    if paper > 0:
+        q.rotate(-(paper - 1))
+    elif paper < 0:
+        q.rotate(-paper)
+
+print(' '.join(map(str, ans)))

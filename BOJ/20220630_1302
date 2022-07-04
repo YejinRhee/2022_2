@@ -1,0 +1,16 @@
+n = int(input())
+titles = [input()  for _ in range(n)]
+tc = {}
+for title in titles:
+    if title 이라는 key in t_c:
+        t_c[title]+=1
+    else:
+        t_c에 title 넣고, value = 1
+t_c 돌면서 cnt 최대인 title 뽑아서 best_seller에 넣어
+max_freq = max(t_c.values())
+best_seller=[]
+for title, cnt in books.items():
+    if cnt ==max_freq:
+        best_seller.append(title)
+best_seller.sort()
+print(best_seller[0])
