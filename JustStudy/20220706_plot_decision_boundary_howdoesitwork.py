@@ -16,5 +16,3 @@ def plot_decision_boundary(model, X, y):
     plt.ylabel('x2')
     plt.xlabel('x1')
     plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
-    
-    
