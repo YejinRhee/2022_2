@@ -1,3 +1,4 @@
+#  O(TN)
 from collections import deque
 n_tc = int(input())
 for _ in range(n_tc):
@@ -12,13 +13,3 @@ for _ in range(n_tc):
             ans.append(init_chs[i])
     print(''.join(ans)) 
             
-    
-  
-    
-
-
-
-
-
-
-

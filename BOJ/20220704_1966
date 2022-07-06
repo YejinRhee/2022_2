@@ -1,0 +1,29 @@
+from collections import deque
+from queue import PriorityQueue
+n_tc = int(input())
+
+for _ in range(n_tc):
+    n, x_i = map(int,input().split())
+    nums = list(input().split())
+    nums = deque(enumerate(nums))
+    print(nums)
+    cnt = 1
+    for _ in range(len(nums)):
+        max_prio_value = max(nums[1])
+        idx, prio = nums[0]
+        if max_prio_value == prio:
+            if x_i == idx: 
+                print(cnt)
+                exit()
+            else:
+                nums.pop()
+                cnt+=1
+            
+        else:
+            nums.rotate(-1)
+    print(cnt)
+                
+    
+    
+
+print(pq, nums)

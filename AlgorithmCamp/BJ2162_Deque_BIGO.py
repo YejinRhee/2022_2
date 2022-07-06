@@ -1,4 +1,8 @@
 from collections import deque
+
+import numpy as np # __MS__ add on
+np.random.rand()
+
 n = int(input())
 de = deque([]) # de = deque(range(1,n+1))
 for i in range(n):

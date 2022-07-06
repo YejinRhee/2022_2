@@ -1,0 +1,9 @@
+# 그거암 ? 
+# 예를들어 100111같은 str input 받을 때
+# list(input())하면 알아서 쪼개준다
+
+A = "asdf"
+b = list(A)
+print(A)
+print(b)
+

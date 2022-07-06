@@ -1,3 +1,5 @@
+# n번 각각에 대해서 kn번 (k는 상수) 돌지 않기에 O(n^2) 이 아니다
+
 n= int(input())
 
 nums = [int(input()) for _ in range(n)]
@@ -20,22 +22,6 @@ for _ in range(n):
         ans.append("-")
         nums_i += 1
 
-
-for i in ans:
-    print(i)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# for i in ans:
+#     print(i)
+print('\n'.join(ans) )
