@@ -1,0 +1,15 @@
+info= input()  # len = N
+info = info.replace("()","*")  # O(n)
+np = 0 # n_piece
+stk = [] # put brackets
+
+for ch in info:   # O(n)
+    if ch == '*':
+        np += len(stk) 
+    elif ch == '(':
+        stk.append('(')
+    else : # ch == ')'
+        np +=1
+        stk.pop()
+        
+print(np)
