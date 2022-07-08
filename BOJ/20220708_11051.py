@@ -2,6 +2,7 @@
 # /를 쓰면 정수라도 실수로 변환한다음 실수간 나눗셈을 수행
 # 그리고 실수는 오차가 나기 쉬움
 # 따라서 PS에서 꼭 필요한 경우가 아니라면 실수는 가급적 지양
+# more info on https://blog.winterjung.dev/2020/01/06/floating-point-in-python
 MOD = 10_007
 n, k = map(int, input().split())
 if k == 0:
