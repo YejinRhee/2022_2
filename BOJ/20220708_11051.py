@@ -7,7 +7,7 @@ n, k = map(int, input().split())
 if k == 0:
     print(1)
     exit()
-
+ 
 cache = [0]*(n+1)
 cache[0] = 1
 cache[1] = 1

@@ -13,7 +13,7 @@ def is_valid(y,x):
 
 def bfs():
     while q:
-        py,px,d = q.popleft()        
+        py,px,d = q.popleft()       
         if py == n-1 and px == m-1:
             return d
         nd = d+1
